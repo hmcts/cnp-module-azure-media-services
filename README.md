@@ -23,10 +23,17 @@ module "azure-media-services" {
   env                      = "${var.env}"
   common_tags              = "${var.common_tags}"
   product                  = "${var.product}"
-  account_tier             = "Premium"
-  account_replication_type = "GRS"
 }
 ```
+
+**Note**: when in production consider overriding the default values for `account_tier` and `account_replication_type` to `Premium` and `GRS` respectively.
+```hcl-terraform
+...
+  account_tier             = "Premium"
+  account_replication_type = "GRS"
+...
+```
+
 
 ## Outputs
 * `id`: The id of the Media Services Account
