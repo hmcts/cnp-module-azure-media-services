@@ -6,9 +6,10 @@ Based on the [Native Terraform Module](https://www.terraform.io/docs/providers/a
 
 ## Inputs
 ### Required
-* `location`: The azure resource location
+* `location`: The Azure resource location
 * `env`: The platform environment
 * `product`: Product name used in naming standards
+* `tags`: List of tags for Azure resources
 
 ### Optional
 * `account_tier`: Account Tier for the Azure Media Services instance. Defaults to Standard
@@ -17,17 +18,22 @@ Based on the [Native Terraform Module](https://www.terraform.io/docs/providers/a
 ## Example Usage
 ```hcl-terraform
 module "azure-media-services" {
-  source = "git@github.com:hmcts/cnp-module-azure-media-services"
-  location = "uksouth"
-  env = "prod"
-  product = "dm"
-  account_tier = "Premium"
+  source                   = "git@github.com:hmcts/cnp-module-azure-media-services"
+  location                 = "${var.location}"
+  env                      = "${var.env}"
+  tags                     = "${var.tags}"
+  product                  = "${var.product}"
+  account_tier             = "Premium"
   account_replication_type = "GRS"
 }
 ```
 
 ## Outputs
 * `id`: The id of the Media Services Account
+* `media_service_name`: The name of the Azure Media Service instance
+* `media_service_rg`: The name of the resource group where the Azure Media Service is deployed
+* `media_service_sa_id`: The id of the primary Storage Account created and attached to the Azure Media Service
+* `media_service_sa_name`: The name of the primary Storage Account created and attached to the Azure Media Service
 
 Media Services Accounts can be imported using the resource id, e.g.
 
