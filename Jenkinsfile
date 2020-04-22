@@ -11,11 +11,12 @@ try {
     }
 
     stage('Terraform init') {
-      sh 'terraform init'
+      sh 'tfenv install'
+      sh 'terraform init -backend=false'
     }
 
     stage('Terraform Linting Checks') {
-      sh 'terraform validate -check-variables=false -no-color'
+      sh 'terraform validate -no-color'
       sh 'terraform fmt -check=true'
     }
   }

@@ -14,6 +14,7 @@ Based on the [Native Terraform Module](https://www.terraform.io/docs/providers/a
 ### Optional
 * `account_tier`: Account Tier for the Azure Media Services instance. Defaults to Standard
 * `account_replication_type`: Account Replication Type for the Azure Media Services instance. Defaults to Locally Redundant
+* `enabled`: Feature toggle flag to enable/disable the module in certain circumstances
 
 ## Example Usage
 ```hcl-terraform
