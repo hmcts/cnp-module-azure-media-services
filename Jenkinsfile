@@ -11,6 +11,7 @@ try {
     }
 
     stage('Terraform init') {
+      sh 'tfenv install'
       sh 'terraform init -backend=false'
     }
 
