@@ -9,7 +9,7 @@ Based on the [Native Terraform Module](https://www.terraform.io/docs/providers/a
 * `location`: The Azure resource location
 * `env`: The platform environment
 * `product`: Product name used in naming standards
-* `tags`: List of tags for Azure resources
+* `common_tags`: List of tags for Azure resources
 
 ### Optional
 * `account_tier`: Account Tier for the Azure Media Services instance. Defaults to Standard
@@ -21,7 +21,7 @@ module "azure-media-services" {
   source                   = "git@github.com:hmcts/cnp-module-azure-media-services"
   location                 = "${var.location}"
   env                      = "${var.env}"
-  tags                     = "${var.tags}"
+  common_tags              = "${var.common_tags}"
   product                  = "${var.product}"
   account_tier             = "Premium"
   account_replication_type = "GRS"

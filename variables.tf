@@ -6,7 +6,7 @@ variable "env" {
   description = "The platform environment"
 }
 
-variable "tags" {
+variable "common_tags" {
   description = "Tags for the Azure resources"
 }
 
