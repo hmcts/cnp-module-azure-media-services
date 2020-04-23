@@ -1,7 +1,7 @@
 locals {
   rg_name      = "${var.product}-media-service-${var.env}"
   sa_name      = "${var.product}mediaservice${var.env}"
-  service_name = "${var.product}-media-service-${var.env}"
+  service_name = "${var.product}mediaservice${var.env}"
 }
 
 resource "azurerm_resource_group" "rg" {
